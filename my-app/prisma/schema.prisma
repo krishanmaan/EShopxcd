@@ -67,7 +67,7 @@ model Review {
 }
 
 model Order {
-  id             String             @id @default(autoincrement())
+  id             String             @id @default(auto()) @map("_id") @db.ObjectId
   userId          String   @db.ObjectId
   amount          String
   currency        String
@@ -93,7 +93,7 @@ model CartProduct {
 }
 
 model Image {
-    id        String         @id @default(autoincrement())
+    id        String         @id @default(auto()) @map("_id") @db.ObjectId
      order      Order?     @relation("OrderProducts")
   color      String
   colorCode  String
